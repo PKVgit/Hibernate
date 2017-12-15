@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd"
+        logicalFilePath="1.0-create-tables.xml">
+    <changeSet id="CreateTables" author="MaxChernenko">
+        <createTable tableName ="Clips">
+            <column autoIncrement = "true" name = "id" type ="INTEGER">
+                <constraints nullable="false" primaryKey="true"></constraints>
+            </column>
+            <column name="duration" type="VARCHAR(50)">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name="teritory" type="INTEGER">
+                <constraints nullable="false"></constraints>
+            </column>
+        </createTable>
+        <createTable tableName = "Songs">
+            <column autoIncrement = "true" name = "id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true"></constraints>
+            </column>
+            <column name = "name" type="VARCHAR(50)">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name = "duration" type="VARCHAR(50)">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name = "cityId" type="INTEGER">
+                <constraints nullable="false"></constraints>
+            </column>
+        </createTable>
+        <createTable tableName ="Albums">
+            <column autoIncrement = "true" name = "id" type ="INTEGER">
+                <constraints nullable="false" primaryKey="true"></constraints>
+            </column>
+            <column name="name" type="VARCHAR(50)">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name="teritory" type="INTEGER">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name="numbOfSongs" type="INTEGER">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name="songId" type="INTEGER" >
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName ="Bands">
+            <column autoIncrement = "true" name = "id" type ="INTEGER">
+                <constraints nullable="false" primaryKey="true"></constraints>
+            </column>
+            <column name = "name" type="VARCHAR(50)">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name = "teritory" type="INTEGER">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name = "numbOfAlb" type="INTEGER">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name = "country" type="VARCHAR(50)">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name = "continentId" type="INTEGER">
+                <constraints nullable="false"></constraints>
+            </column>
+        </createTable>
+        <createTable tableName ="Sites">
+            <column autoIncrement = "true" name = "id" type ="INTEGER">
+                <constraints nullable="false" primaryKey="true"></constraints>
+            </column>
+            <column name="name" type="VARCHAR(50)">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name = "bandId" type="INTEGER">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name="continentId" type="INTEGER">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name = "songId" type="INTEGER">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name="cityId" type="INTEGER">
+                <constraints nullable="false"></constraints>
+            </column>
+        </createTable>
+<!--
+        <sql>
+
+            CREATE TABLE Cities
+            (
+            id INT NOT NULL,
+            duration TEXT DEFAULT NULL,
+            teritory INT DEFAULT NULL
+            PRIMARY KEY(id)
+            );
+
+            CREATE TABLE Humans
+            (
+            id INT NOT NULL,
+            name TEXT DEFAULT NULL,
+            songDuration TEXT DEFAULT NULL,
+            cityId INT NOT NULL REFERENCES Cities.id,
+            PRIMARY KEY(id)
+            );
+
+            CREATE TABLE Continents
+            (
+            id INT NOT NULL,
+            name TEXT DEFAULT NULL,
+            teritory INT DEFAULT NULL,
+            numbOfSongs INT DEFAULT NULL,
+            songId INT NOT NULL REFERENCES Humans.Id,
+            PRIMARY KEY(id)
+            );
+
+            CREATE TABLE Countries
+            (
+            id INT NOT NULL,
+            name TEXT DEFAULT NULL,
+            teritory INT DEFAULT NULL,
+            numbOfAlb INT DEFAULT NULL,
+            country TEXT DEFAULT NULL,
+            continentId INT NOT NULL REFERENCES Continents.Id,
+            PRIMARY KEY(id)
+            );
+
+            CREATE TABLE Groups
+            (
+            id INT NOT NULL,
+            name TEXT DEFAULT NULL,
+            bandId INT NOT NULL REFERENCES Countries.Id,
+            continentId INT NOT NULL REFERENCES Continents.Id,
+            songId INT NOT NULL REFERENCES Humans.Id,
+            cityId INT NOT NULL REFERENCES Cities.Id,
+            PRIMARY KEY(id)
+            );
+
+        </sql>
+-->
+    </changeSet>
+</databaseChangeLog>

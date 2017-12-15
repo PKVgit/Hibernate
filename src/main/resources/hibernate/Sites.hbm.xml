@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="items.Groups" table="Sites">
+        <meta attribute="class-description">
+            This class contains developer's details.
+        </meta>
+        <id name="id" type="int" column="id"/>
+        <property name="name" column="name" type="string"/>
+        <property name="bandId" column="bandId" type="int"/>
+        <property name="continentId" column="continentId" type="int"/>
+        <property name="songId" column="songId" type="int"/>
+        <property name="cityId" column="cityId" type="int"/>
+    </class>
+</hibernate-mapping>
