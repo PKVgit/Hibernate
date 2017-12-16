@@ -13,19 +13,19 @@
         </property>
 
         <property name="hibernate.connection.url">
-            jdbc:postgresql://127.0.0.1:5432/Player
+            jdbc:postgresql://127.0.0.1:5432/Earth
         </property>
         <property name="hibernate.connection.username">
             postgres
         </property>
         <property name="hibernate.connection.password">
-            0987
+            123
         </property>
 
-        <mapping resource="hibernate/Clips.hbm.xml"/>
-        <mapping resource="hibernate/Songs.hbm.xml"/>
-        <mapping resource="hibernate/Albums.hbm.xml"/>
-        <mapping resource="hibernate/Bands.hbm.xml"/>
-        <mapping resource="hibernate/Sites.hbm.xml"/>
+        <mapping resource="hibernate/Counries.hbm.xml"/>
+        <mapping resource="hibernate/Cities.hbm.xml"/>
+        <mapping resource="hibernate/Continents.hbm.xml"/>
+        <mapping resource="hibernate/Groups.hbm.xml"/>
+        <mapping resource="hibernate/Humans.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

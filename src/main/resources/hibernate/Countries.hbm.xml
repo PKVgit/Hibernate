@@ -3,13 +3,12 @@
         "-//Hibernate/Hibernate Mapping DTD//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="items.Humans" table="Songs">
+    <class name="items.Countries" table="Countries">
         <meta attribute="class-description">
             This class contains developer's details.
         </meta>
         <id name="id" type="int" column="id"/>
         <property name="name" column="name" type="string"/>
-        <property name="songDuration" column="duration" type="string"/>
-        <property name="cityId" column="cityId" type="int"/>
+        <property name="continentId" column="continentId" type="int"/>
     </class>
 </hibernate-mapping>

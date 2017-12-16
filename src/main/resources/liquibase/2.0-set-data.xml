@@ -6,172 +6,65 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd"
         logicalFilePath="2.0-set-data.xml">
-    <changeSet id="setData" author="MaxChernenko">
+    <changeSet id="setData" author="kostyaqwerty065@gmail.com">
 
 
-        <insert tableName="Clips">
-            <column name = "Duration" value = "4:25"></column>
-            <column name = "DateRel" value="2012"></column>
-        </insert>
-        <rollback>
-            DELETE FROM Clips WHERE Duration LIKE '4:25'
-        </rollback>
-        <insert tableName="Clips">
-            <column name = "Duration" value = "2:48"></column>
-            <column name = "DateRel" value="2003"></column>
-        </insert>
-        <rollback>
-            DELETE FROM Clips WHERE Duration LIKE '2:48'
-        </rollback>
-        <insert tableName="Clips">
-            <column name = "Duration" value = "3:07"></column>
-            <column name = "DateRel" value="2004"></column>
-        </insert>
-        <rollback>
-            DELETE FROM Clips WHERE Duration LIKE '3:07'
-        </rollback>
-        <insert tableName="Songs">
-            <column name="Name" value="Numb"></column>
-            <column name="Duration" value="3:07"></column>
-            <column name="ClipId" value="3"></column>
-        </insert>
-        <rollback>
-            DELETE FROM Songs WHERE Name LIKE 'Numb'
-        </rollback>
-        <insert tableName="Songs">
-            <column name="Name" value="Faint"></column>
-            <column name="Duration" value="2:43"></column>
-            <column name="ClipId" value="2"></column>
-        </insert>
-        <rollback>
-            DELETE FROM Songs WHERE Name LIKE 'Faint'
-        </rollback>
-        <insert tableName="Songs">
-            <column name="Name" value="Wild One"></column>
-            <column name="Duration" value="4:20"></column>
-            <column name="ClipId" value="1"></column>
-        </insert>
-        <rollback>
-            DELETE FROM Songs WHERE Name LIKE 'Wild One'
-        </rollback>
-        <insert tableName="Albums">
-            <column name="Name" value="Nimrod"></column>
-            <column name="DateRel" value="1997"></column>
-            <column name="NumbOfSongs" value="22"></column>
-            <column name="SongId" value="3"></column>
-        </insert>
-        <rollback>
-            DELETE FROM Albums WHERE Name LIKE = 'Nimrod'
-        </rollback>
-        <insert tableName="Albums">
-            <column name="Name" value="DOS!"></column>
-            <column name="DateRel" value="2012"></column>
-            <column name="NumbOfSongs" value="13"></column>
-            <column name="SongId" value="3"></column>
-        </insert>
-        <rollback>
-            DELETE FROM Albums WHERE Name LIKE = 'DOS!'
-        </rollback>
-        <insert tableName="Albums">
-            <column name="Name" value="Meteora"></column>
-            <column name="DateRel" value="2003"></column>
-            <column name="NumbOfSongs" value="13"></column>
-            <column name="SongId" value="1"></column>
-        </insert>
-        <rollback>
-            DELETE FROM Albums WHERE Name LIKE = 'Meteora'
-        </rollback>
-        <insert tableName="Bands">
-            <column name = "Name" value="Linkin Park"></column>
-            <column name = "DateRel" value="1996"></column>
-            <column name = "NumbOfAlb" value="7"></column>
-            <column name = "Country" value="USA"></column>
-            <column name = "AlbumId" value="3"></column>
-        </insert>
-        <rollback>
-            DELETE FROM Bands WHERE Name LIKE 'Linkin Park'
-        </rollback>
-        <insert tableName="Bands">
-            <column name = "Name" value="Green Day"></column>
-            <column name = "DateRel" value="1986"></column>
-            <column name = "NumbOfAlb" value="19"></column>
-            <column name = "Country" value="USA"></column>
-            <column name = "AlbumId" value="1"></column>
-        </insert>
-        <rollback>
-            DELETE FROM Bands WHERE Name LIKE 'Green Day'
-        </rollback>
-        <insert tableName="Bands">
-            <column name = "Name" value="MGK"></column>
-            <column name = "DateRel" value="2006"></column>
-            <column name = "NumbOfAlb" value="3"></column>
-            <column name = "Country" value="USA"></column>
-            <column name = "AlbumId" value="2"></column>
-        </insert>
-        <rollback>
-            DELETE FROM Bands WHERE Name LIKE 'MGK'
-        </rollback>
-        <insert tableName="Sites">
-            <column name="Link" value="LinkinPark.com"></column>
-            <column name="BandId" value="1"></column>
-            <column name="AlbumId" value="3"></column>
-            <column name="SongId" value="1"></column>
-            <column name="ClipId" value="2"></column>
-        </insert>
-        <rollback>
-            DELETE FROM Sites WHERE Link LIKE 'LinkinPark.com'
-        </rollback>
-        <insert tableName="Sites">
-            <column name="Link" value="MGKelly.com"></column>
-            <column name="BandId" value="3"></column>
-            <column name="AlbumId" value="1"></column>
-            <column name="SongId" value="1"></column>
-            <column name="ClipId" value="1"></column>
-        </insert>
-        <rollback>
-            DELETE FROM Sites WHERE Link LIKE 'MGKelly.com'
-        </rollback>
-        <insert tableName="Sites">
-            <column name="Link" value="GreenDay.com"></column>
-            <column name="BandId" value="2"></column>
-            <column name="AlbumId" value="2"></column>
-            <column name="SongId" value="3"></column>
-            <column name="ClipId" value="1"></column>
-        </insert>
-        <rollback>
-            DELETE FROM Sites WHERE Link LIKE 'GreenDay.com'
-        </rollback>
-<!--        <insert tableName="Cities">
-            <column name="duration" value="4:25"></column>
-            <column name="teritory" value="2012"></column>
-        </insert>
-        <insert tableName="Cities">
-
-            <column name="duration" value="2:48"></column>
-            <column name="teritory" value="2003"></column>
-        </insert>
-        <insert tableName="Cities">
-
-            <column name="duration" value="3:07"></column>
-            <column name="teritory" value="2004"></column>
-        </insert>
         <insert tableName="Humans">
-
-            <column name="name" value="Numb"></column>
-            <column name="duration" value="3:07"></column>
-            <column name="cityId" value="3"></column>
+            <column name = "firstName" value = "Max"></column>
+            <column name = "age" value="20"></column>
+			<column name="groupId" value="2"></column>
         </insert>
-        <insert tableName="Humans">
-            <column name="name" value="Faint"></column>
-            <column name="duration" value="2:43"></column>
-            <column name="cityId" value="2"></column>
-        </insert>
-        <insert tableName="Humans">
-
-            <column name="name" value="Wild One"></column>
-            <column name="duration" value="4:20"></column>
+        <rollback>
+            DELETE FROM Humans WHERE firstName LIKE 'Max'
+        </rollback>
+        
+        <insert tableName="Groups">
+            <column name="name" value="Honests"></column>
+            <column name="purpose" value="true"></column>
             <column name="cityId" value="1"></column>
         </insert>
+        <rollback>
+            DELETE FROM Groups WHERE name LIKE 'Honests'
+        </rollback>
+        
+        <insert tableName="Cities">
+            <column name="name" value="Kyiv"></column>
+            <column name="years" value="3"></column>
+            <column name="countryId" value="3"></column>
+        </insert>
+        <rollback>
+            DELETE FROM Cities WHERE name LIKE = 'Kyiv'
+        </rollback>
+        
+        <insert tableName="Countries">
+            <column name = "name" value="Linkin Park"></column>
+            <column name = "continentId" value="3"></column>
+        </insert>
+        <rollback>
+            DELETE FROM Countries WHERE name LIKE 'Russia'
+        </rollback>
+        
+        <insert tableName="Continents">
+            <column name="name" value="America"></column>
+            <column name="teritory" value="342327"></column>
+        </insert>
+        <rollback>
+            DELETE FROM Continents WHERE name LIKE 'America'
+        </rollback>
+        
+<!--    <insert tableName="Cities">
+            <column name="name" value="Kyiv"></column>
+            <column name="years" value="1"></column>
+			<column name="countryId" value="1"></column>
+        </insert>
+        
+        <insert tableName="Humans">
+
+            <column name="firstName" value="Max"></column>
+            <column name="age" value="19"></column>
+            <column name="groupId" value="1"></column>
+        </insert>
+        
         <insert tableName="Continents">
 
             <column name="name" value="Nimrod"></column>
@@ -179,69 +72,21 @@
             <column name="numbOfSongs" value="22"></column>
             <column name="songId" value="3"></column>
         </insert>
-        <insert tableName="Continents">
-
-            <column name="name" value="DOS!"></column>
-            <column name="teritory" value="2012"></column>
-            <column name="numbOfSongs" value="13"></column>
-            <column name="songId" value="3"></column>
-        </insert>
-        <insert tableName="Continents">
-
-            <column name="name" value="Meteora"></column>
-            <column name="teritory" value="2003"></column>
-            <column name="numbOfSongs" value="13"></column>
-            <column name="songId" value="1"></column>
-        </insert>
+        
 
         <insert tableName="Countries">
 
-            <column name="name" value="Linkin Park"></column>
-            <column name="teritory" value="1996"></column>
-            <column name="numbOfAlb" value="7"></column>
-            <column name="country" value="USA"></column>
-            <column name="continentId" value="3"></column>
+            <column name="name" value="America"></column>
+            <column name="teritory" value="342327"></column>
         </insert>
-        <insert tableName="Countries">
-
-            <column name="name" value="Green Day"></column>
-            <column name="teritory" value="1986"></column>
-            <column name="numbOfAlb" value="19"></column>
-            <column name="country" value="USA"></column>
-            <column name="continentId" value="1"></column>
-        </insert>
-        <insert tableName="Countries">
-
-            <column name="name" value="MGK"></column>
-            <column name="teritory" value="2006"></column>
-            <column name="numbOfAlb" value="3"></column>
-            <column name="country" value="USA"></column>
-            <column name="continentId" value="2"></column>
-        </insert>
+        
         <insert tableName="Groups">
 
-            <column name="name" value="LinkinPark.com"></column>
-            <column name="bandId" value="1"></column>
-            <column name="continentId" value="3"></column>
-            <column name="songId" value="1"></column>
+            <column name="name" value="Honests"></column>
+            <column name="purpose" value="2"></column>
             <column name="cityId" value="2"></column>
         </insert>
-        <insert tableName="Groups">
-
-            <column name="name" value="MGKelly.com"></column>
-            <column name="bandId" value="3"></column>
-            <column name="continentId" value="1"></column>
-            <column name="songId" value="1"></column>
-            <column name="cityId" value="1"></column>
-        </insert>
-        <insert tableName="Groups">
-
-            <column name="name" value="GreenDay.com"></column>
-            <column name="bandId" value="2"></column>
-            <column name="continentId" value="2"></column>
-            <column name="songId" value="3"></column>
-            <column name="cityId" value="1"></column>
-        </insert>-->
+        -->
 
     </changeSet>
 </databaseChangeLog>
